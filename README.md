@@ -92,3 +92,30 @@
 <p align="center"><img src="https://i.imgur.com/lnr6Rtm.png" height="50%" width="50%" alt="image"/>
 
 <br>
+<br>
+<br>
+
+<h1>Using Windows Powershell</h1>
+
+<h3>*Create Organizational Units (OUs) using Powershell</h3>
+<p>To create an OU using powershell, I type the following command <b><i> “New-ADOrganizationalunit -name Edmonton -Path “DC=Adeniyi,DC=Com”</i></b></p>
+<p align="center"><img src="https://i.imgur.com/y0bS0Zg.png" height="50%" width="50%" alt="image"/>
+
+<h3>*Create Group using Powershell</h3>
+<p>To create a group in an OU, I used the following command to create an E_Marketing security group in the Edmonton OU I created earlier <b><i>“New-ADGroup -name “E_Marketing” -Path “OU=Edmonton,DC=Adeniyi,DC=Com”</i></b>.</p>
+<p align="center"><img src="https://i.imgur.com/DHDu1wj.png" height="50%" width="50%" alt="image"/>
+
+<h3>*Create Users using Powershell</h3>
+<p>To create a user in Edmonton OU, I used the following command;  <b><i>“New-ADUser -name "Karu Jaru" GivenName “Karu.Jaru” SAMAccountName “Karu.Jaru” UserPrincipalName “Karu.jaru@adeniyi.com” -AccountPassword (ConvertToSecureString "Newuser123!" -AsPlainText -Force) -path "OU=Edmonton,DC=Adeniyi,DC=com" -PassThru | Enable-ADAccount”</i></b>.</p>
+<p align="center"><img src="https://i.imgur.com/Hm8HcA9.png" height="50%" width="50%" alt="image"/>
+
+<h3>*Add Users to Specified Groups using Powershell</h3>
+<p>Now to add the user to specified groups, I used this command; <b><i>“Add-ADGroupMember -Identity E_marketing -Members Karu.Jaru”</i></b>.</p>
+<p align="center"><img src="https://i.imgur.com/IMWxDjp.png" height="50%" width="50%" alt="image"/>
+
+<br>
+
+<p>To confirm the user has been added to the E_marketing security group, I clicked Edmonton OU in the Active Directory Users and Computer and go to E_marketing , then click on the Members tab to check and the user is there.</p>
+<p align="center"><img src="https://i.imgur.com/VbIa3x4.png" height="50%" width="50%" alt="image"/>
+
+<br>
