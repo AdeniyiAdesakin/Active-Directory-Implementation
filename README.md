@@ -1,5 +1,16 @@
 <h1>Creating Organizational Units, Groups & Users in Active Directory</h1>
 <p>The purpose of creating OUs, Groups, and Users in Active Directory is to organize and manage network resources, assign appropriate permissions, and streamline user and group administration for security and access control.</p>
+
+<h3>*Environments and Technologies Used</h3>
+
+- Active Directory Domain Service(ADDS)</p>
+- Windows Powershell
+
+<h3>*Operating System Used</h3>
+
+- Windows Server 2019
+- Windows 11 Pro (24H2)
+
 <h3>*Creating Organizational Units</h3>
 <p>1. Go to Server manager-dashboard > Tools >Active Directory Users and Computers</p>
 <p align="center"><img src="https://i.imgur.com/Jk0i5NN.png" height="50%" width="50%" alt="image"/>
