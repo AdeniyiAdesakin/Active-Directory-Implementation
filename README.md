@@ -9,7 +9,7 @@
 <h3>*Operating System Used</h3>
 
 - Windows Server 2019
-- Windows 11 Pro (24H2)
+- Windows 11 Pro 
 
 <h3>*Creating Organizational Units</h3>
 <p>1. Go to Server manager-dashboard > Tools >Active Directory Users and Computers</p>
