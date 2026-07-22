@@ -65,7 +65,7 @@ To address this, I organized directory objects by location, grouped users accord
 I used ADUC to create location-based organizational units. This provides a logical structure for managing related users and groups and creates a foundation for future Group Policy targeting and delegated administration.
 
 <p align="center">
-  <img src="https://i.imgur.com/SJSrsWn.png" width="750" alt="Creating a location-based organizational unit in Active Directory">
+  <img src="https://i.imgur.com/bB0TK3e.png" width="750" alt="Creating a location-based organizational unit in Active Directory">
 </p>
 
 ### 2. Created Global Security Groups
@@ -73,7 +73,7 @@ I used ADUC to create location-based organizational units. This provides a logic
 Within the appropriate OU, I created global security groups to represent departments and access requirements. Group-based administration is more scalable and easier to audit than assigning permissions directly to individual users.
 
 <p align="center">
-  <img src="https://i.imgur.com/4s8QNOI.png" width="750" alt="Global security groups created in the Toronto organizational unit">
+  <img src="https://i.imgur.com/fB7YJe8.png" width="750" alt="Global security groups created in the Toronto organizational unit">
 </p>
 
 ### 3. Provisioned Domain User Accounts
@@ -81,7 +81,7 @@ Within the appropriate OU, I created global security groups to represent departm
 I created domain user accounts with standardized sign-in names and temporary passwords. I enabled **User must change password at next logon** so users would set private passwords during their first domain sign-in.
 
 <p align="center">
-  <img src="https://i.imgur.com/HppqZGM.png" width="750" alt="Domain user accounts created in an Active Directory organizational unit">
+  <img src="https://i.imgur.com/2CMH502.png" width="750" alt="Domain user accounts created in an Active Directory organizational unit">
 </p>
 
 ### 4. Assigned and Verified Group Memberships
@@ -89,7 +89,7 @@ I created domain user accounts with standardized sign-in names and temporary pas
 I added users to their required security groups through both the user object and the group object's **Members** tab. I also assigned a user to multiple groups in one operation and confirmed the results from the user's **Member Of** tab.
 
 <p align="center">
-  <img src="https://i.imgur.com/TQIaMx1.png" width="750" alt="Verifying a user's security-group memberships in Active Directory">
+  <img src="https://i.imgur.com/0FluxwU.png" width="750" alt="Verifying a user's security-group memberships in Active Directory">
 </p>
 
 ### 5. Validated Domain Authentication
@@ -97,11 +97,11 @@ I added users to their required security groups through both the user object and
 From a domain-joined Windows 11 workstation, I signed in with a newly created domain account. The user was required to replace the temporary password before Windows completed the sign-in, confirming that the account and password setting worked as intended.
 
 <p align="center">
-  <img src="https://i.imgur.com/LWzNMX6.png" width="750" alt="Windows requiring a new domain user to change the temporary password">
+  <img src="https://i.imgur.com/xOJkJaP.png" width="750" alt="Windows requiring a new domain user to change the temporary password">
 </p>
 
 <p align="center">
-  <img src="https://i.imgur.com/lnr6Rtm.png" width="750" alt="Successful password change during the new user's first domain sign-in">
+  <img src="https://i.imgur.com/wyXcr52.png" width="750" alt="Successful password change during the new user's first domain sign-in">
 </p>
 
 ### 6. Repeated Administration Tasks with PowerShell
