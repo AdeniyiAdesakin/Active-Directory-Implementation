@@ -1,132 +1,380 @@
-<h1>Creating Organizational Units, Groups & Users in Active Directory</h1>
-<p>The purpose of creating OUs, Groups, and Users in Active Directory is to organize and manage network resources, assign appropriate permissions, and streamline user and group administration for security and access control.</p>
+# Active Directory Identity Administration: OUs, Users, and Security Groups
 
-<h3>*Environments and Technologies Used</h3>
+**Windows Server 2019 | Active Directory | ADUC | PowerShell | Windows 11**
 
-- Active Directory Domain Service(ADDS)</p>
-- Windows Powershell
+## Project Overview
 
-<h3>*Operating System Used</h3>
+I built and administered an Active Directory identity structure representing users and departments across Toronto and Edmonton business locations. Using both Active Directory Users and Computers (ADUC) and PowerShell, I created organizational units, global security groups, and domain user accounts; assigned users to appropriate groups; enforced a password change at first sign-in; and validated domain authentication from a Windows 11 workstation.
 
-- Windows Server 2019
-- Windows 11 Pro 
+This project demonstrates the identity-administration tasks commonly performed by help desk, service desk, and junior systems administration teams.
 
-<h3>*Creating Organizational Units</h3>
-<p>1. Go to Server manager-dashboard > Tools >Active Directory Users and Computers</p>
-<p align="center"><img src="https://i.imgur.com/Jk0i5NN.png" height="50%" width="50%" alt="image"/>
+## Simulated Business Scenario
 
-<p>2. On the dashboard, right click on the domain name, go to New, then click Organizational Unit</p>
-<p align="center"><img src="https://i.imgur.com/tLc36FQ.png" height="50%" width="50%" alt="image"/>
+A growing organization needs a structured way to manage employee accounts across multiple locations. Creating every account in the default Active Directory containers would make administration, policy targeting, and access management difficult as the organization grows.
 
-<p>3. On the New object -Organizational Unit screen, in the name space, type in the OU name you intend to create.</p>
-<p align="center"><img src="https://i.imgur.com/SJSrsWn.png" height="50%" width="50%" alt="image"/>
+To address this, I organized directory objects by location, grouped users according to their department or access requirements, and verified that newly created users could authenticate from a domain-joined workstation.
 
-<br>
+## Project Objectives
 
-<h3>*Creating Global Groups</h3>
-<p>1. To create Global Groups in Toronto OU, from the Active Directory Users and Computer's dashboard, right click on the OU created, go to New and then click on Group</p>
-<p align="center"><img src="https://i.imgur.com/zeK3BgN.png" height="50%" width="50%" alt="image"/>
+- Create organizational units for logical separation of directory objects.
+- Create global security groups for department-based membership.
+- Create and configure domain user accounts.
+- Require new users to change their temporary passwords at first sign-in.
+- Add users to one or multiple security groups.
+- Verify group memberships in Active Directory.
+- Validate a new user's domain sign-in from a Windows 11 client.
+- Repeat common administration tasks with PowerShell.
 
-<p>2. On the New Object - Group, type in the Group name in the space provided and click OK</p>
-<p align="center"><img src="https://i.imgur.com/TZ8uRiB.png" height="50%" width="50%" alt="image"/>
+## Lab Environment
 
-<p>3. Repeated above steps 1 and 2 to create more groups in TorontoOU</p>
-<p align="center"><img src="https://i.imgur.com/4s8QNOI.png" height="50%" width="50%" alt="image"/>
+| Component | Technology | Purpose |
+| --- | --- | --- |
+| Domain controller | Windows Server 2019 | Hosts Active Directory Domain Services |
+| Client workstation | Windows 11 Pro | Validates domain authentication and the first-sign-in process |
+| GUI administration | Active Directory Users and Computers | Manages OUs, users, groups, and memberships |
+| Automation | Windows PowerShell and the ActiveDirectory module | Creates and verifies directory objects through commands |
 
-<br>
+## Directory Design
 
-<h3>*Creating Domain User Accounts and assign them to the groups</h3>
-<p>1. While on the Active Directory Users and Computers' dashboard, right click on the Organizational Unit, go to New, then click User</p>
-<p align="center"><img src="https://i.imgur.com/1gUs4oc.png" height="50%" width="50%" alt="image"/>
+| Directory object | Example | Administrative purpose |
+| --- | --- | --- |
+| Location-based OU | Toronto, Edmonton | Organizes users and groups by business location |
+| Global security group | `E_Marketing` | Groups users with a shared department or access requirement |
+| Domain user | Example employee account | Provides an individual identity for domain authentication |
 
-<p>2. On the New Object - User, input the first name, last name, a user logon name and click NEXT</p>
-<p align="center"><img src="https://i.imgur.com/ZNxSdwF.png" height="50%" width="50%" alt="image"/>
+> **Project scope:** This lab demonstrates identity organization and group membership. Assigning the groups to file, printer, or application permissions is covered separately in resource-access projects.
 
-<p>3. On the next page, input the password, leave the “User must change password at next logon” checked, then click NEXT</p>
-<p align="center"><img src="https://i.imgur.com/qgddFlJ.png" height="50%" width="50%" alt="image"/>
+## Skills Demonstrated
 
-<p>4. On the next page, review the information and click FINISH</p>
-<p align="center"><img src="https://i.imgur.com/MJGZOPD.png" height="50%" width="50%" alt="image"/>
+- Active Directory identity and access administration
+- Organizational unit design
+- Domain user provisioning
+- Global security-group creation
+- Single and multiple group assignments
+- Account and membership verification
+- Password-change-at-first-sign-in configuration
+- Windows domain authentication
+- PowerShell administration with the ActiveDirectory module
+- Secure handling of temporary passwords
+- Technical documentation
 
-<p>5. After creating the first user, I created more users by repeating Step 1-4.</p>
-<p align="center"><img src="https://i.imgur.com/HppqZGM.png" height="50%" width="50%" alt="image"/>
+## Implementation Summary
 
-<h3>*To add users to Groups</h3>
-<p>1. Right-click on the User and click on Add to a group</p>
-<p align="center"><img src="https://i.imgur.com/zNL84DP.png" height="50%" width="50%" alt="image"/>
+### 1. Created Organizational Units
 
-<p>2. On the next page, in the” Enter the object names to select”, type in the Group you want to add user to, click check names to confirm then click OK</p>
-<p align="center"><img src="https://i.imgur.com/owc3DUR.png" height="50%" width="50%" alt="image"/>
+I used ADUC to create location-based organizational units. This provides a logical structure for managing related users and groups and creates a foundation for future Group Policy targeting and delegated administration.
 
-<p>3. You will get a prompt that that “The Add to Group operation was succesfully completed”, just click OK</p>
-<p align="center"><img src="https://i.imgur.com/6N1yAys.png" height="50%" width="50%" alt="image"/>
+<p align="center">
+  <img src="https://i.imgur.com/SJSrsWn.png" width="750" alt="Creating a location-based organizational unit in Active Directory">
+</p>
 
-<h3>*Another method to add Users to Groups</h3>
-<p>1. Double-click on the Group and go to Members tab</p>
-<p align="center"><img src="https://i.imgur.com/2O2Gamm.png" height="50%" width="50%" alt="image"/>
+### 2. Created Global Security Groups
 
-<p>2. While on the Members Tab, click on Add </p>
-<p align="center"><img src="https://i.imgur.com/1veIP9e.png" height="50%" width="50%" alt="image"/>
+Within the appropriate OU, I created global security groups to represent departments and access requirements. Group-based administration is more scalable and easier to audit than assigning permissions directly to individual users.
 
-<p>3. On the “Select Users, Contacts, Computers, Server Accounts or Groups” screen, in the “Enter the object names to select” box, type in the name and click on check names, then click OK</p>
-<p align="center"><img src="https://i.imgur.com/wBi0wPG.png" height="50%" width="50%" alt="image"/>
+<p align="center">
+  <img src="https://i.imgur.com/4s8QNOI.png" width="750" alt="Global security groups created in the Toronto organizational unit">
+</p>
 
-<p>4. Next you can see the name shown in the Member’s tab, click Apply, then click OK</p>
-<p align="center"><img src="https://i.imgur.com/QXSpavs.png" height="50%" width="50%" alt="image"/>
+### 3. Provisioned Domain User Accounts
 
-<h3>*To add a user to more than one or multiple groups.</h3>
-<p>1. Right click on the user and click on Add to a group</p>
-<p align="center"><img src="https://i.imgur.com/vAQIvXP.png" height="50%" width="50%" alt="image"/>
+I created domain user accounts with standardized sign-in names and temporary passwords. I enabled **User must change password at next logon** so users would set private passwords during their first domain sign-in.
 
-<p>2. On the select groups screen, enter all the group names in the “Enter the object names to select” box, all seperated by a semi-colon, then click check names to verify and click OK to finish</p>
-<p align="center"><img src="https://i.imgur.com/KbMXyU0.png" height="50%" width="50%" alt="image"/>
+<p align="center">
+  <img src="https://i.imgur.com/HppqZGM.png" width="750" alt="Domain user accounts created in an Active Directory organizational unit">
+</p>
 
-<p>3. You are shown “The Add to Group operation was successfully completed” message.</p>
-<p align="center"><img src="https://i.imgur.com/Y5VEIKP.png" height="50%" width="50%" alt="image"/>
+### 4. Assigned and Verified Group Memberships
 
-<p>4. To verify user is added to all group, right-click on the user and go to properties, then click on Member Of. You can all the groups this user belongs to</p>
-<p align="center"><img src="https://i.imgur.com/TQIaMx1.png" height="50%" width="50%" alt="image"/>
+I added users to their required security groups through both the user object and the group object's **Members** tab. I also assigned a user to multiple groups in one operation and confirmed the results from the user's **Member Of** tab.
 
-<br>
+<p align="center">
+  <img src="https://i.imgur.com/TQIaMx1.png" width="750" alt="Verifying a user's security-group memberships in Active Directory">
+</p>
 
-<h3>*Verify login newly created Users</h3>
-<p>1. Sign out of any existing account in the client's computer and type the username and password of the new user created in the OU</p>
-<p align="center"><img src="https://i.imgur.com/WD4PM0O.png" height="50%" width="50%" alt="image"/>
+### 5. Validated Domain Authentication
 
-<p>2. You are greeted with the message “The user’s password must be changed before signing in, click OK</p>
-<p align="center"><img src="https://i.imgur.com/LWzNMX6.png" height="50%" width="50%" alt="image"/>
+From a domain-joined Windows 11 workstation, I signed in with a newly created domain account. The user was required to replace the temporary password before Windows completed the sign-in, confirming that the account and password setting worked as intended.
 
-<p>3. Type in the new password and confirm password ,then hit Enter</p>
-<p align="center"><img src="https://i.imgur.com/Ag0Vbw1.png" height="50%" width="50%" alt="image"/>
+<p align="center">
+  <img src="https://i.imgur.com/LWzNMX6.png" width="750" alt="Windows requiring a new domain user to change the temporary password">
+</p>
 
-<p>4. You can then see the password has been changed, click OK and you are in</p>
-<p align="center"><img src="https://i.imgur.com/lnr6Rtm.png" height="50%" width="50%" alt="image"/>
+<p align="center">
+  <img src="https://i.imgur.com/lnr6Rtm.png" width="750" alt="Successful password change during the new user's first domain sign-in">
+</p>
 
-<br>
-<br>
-<br>
+### 6. Repeated Administration Tasks with PowerShell
 
-<h1>Using Windows Powershell</h1>
+I used the ActiveDirectory PowerShell module to create an OU, create a global security group, provision a user, and assign the user to the appropriate group. PowerShell makes repetitive administration more consistent and prepares the process for future bulk provisioning.
 
-<h3>*Create Organizational Units (OUs) using Powershell</h3>
-<p>To create an OU using powershell, I type the following command <b><i> “New-ADOrganizationalunit -name Edmonton -Path “DC=Adeniyi,DC=Com”</i></b></p>
-<p align="center"><img src="https://i.imgur.com/y0bS0Zg.png" height="50%" width="50%" alt="image"/>
+## Secure PowerShell Examples
 
-<h3>*Create Group using Powershell</h3>
-<p>To create a group in an OU, I used the following command to create an E_Marketing security group in the Edmonton OU I created earlier <b><i>“New-ADGroup -name “E_Marketing” -Path “OU=Edmonton,DC=Adeniyi,DC=Com”</i></b>.</p>
-<p align="center"><img src="https://i.imgur.com/DHDu1wj.png" height="50%" width="50%" alt="image"/>
+The following commands show a corrected and more secure version of the workflow. The temporary password is entered as a `SecureString` instead of being written directly into the script or repository.
 
-<h3>*Create Users using Powershell</h3>
-<p>To create a user in Edmonton OU, I used the following command;  <b><i>“New-ADUser -name "Karu Jaru" GivenName “Karu.Jaru” SAMAccountName “Karu.Jaru” UserPrincipalName “Karu.jaru@adeniyi.com” -AccountPassword (ConvertToSecureString "Newuser123!" -AsPlainText -Force) -path "OU=Edmonton,DC=Adeniyi,DC=com" -PassThru | Enable-ADAccount”</i></b>.</p>
-<p align="center"><img src="https://i.imgur.com/Hm8HcA9.png" height="50%" width="50%" alt="image"/>
+### Create an Organizational Unit
 
-<h3>*Add Users to Specified Groups using Powershell</h3>
-<p>Now to add the user to specified groups, I used this command; <b><i>“Add-ADGroupMember -Identity E_marketing -Members Karu.Jaru”</i></b>.</p>
-<p align="center"><img src="https://i.imgur.com/IMWxDjp.png" height="50%" width="50%" alt="image"/>
+```powershell
+Import-Module ActiveDirectory
 
-<br>
+$DomainPath = "DC=Adeniyi,DC=com"
+$OuPath = "OU=Edmonton,$DomainPath"
 
-<p>To confirm the user has been added to the E_marketing security group, I clicked Edmonton OU in the Active Directory Users and Computer and go to E_marketing , then click on the Members tab to check and the user is there.</p>
-<p align="center"><img src="https://i.imgur.com/VbIa3x4.png" height="50%" width="50%" alt="image"/>
+New-ADOrganizationalUnit `
+    -Name "Edmonton" `
+    -Path $DomainPath `
+    -ProtectedFromAccidentalDeletion $true
+```
 
-<br>
+### Create a Global Security Group
+
+```powershell
+New-ADGroup `
+    -Name "E_Marketing" `
+    -SamAccountName "E_Marketing" `
+    -GroupScope Global `
+    -GroupCategory Security `
+    -Path $OuPath `
+    -Description "Edmonton Marketing users"
+```
+
+### Create and Enable a Domain User
+
+```powershell
+$Password = Read-Host "Enter a temporary password" -AsSecureString
+
+New-ADUser `
+    -Name "Karu Jaru" `
+    -GivenName "Karu" `
+    -Surname "Jaru" `
+    -SamAccountName "Karu.Jaru" `
+    -UserPrincipalName "Karu.Jaru@adeniyi.com" `
+    -AccountPassword $Password `
+    -Path $OuPath `
+    -Enabled $true `
+    -ChangePasswordAtLogon $true
+```
+
+### Add the User to a Security Group
+
+```powershell
+Add-ADGroupMember `
+    -Identity "E_Marketing" `
+    -Members "Karu.Jaru"
+```
+
+### Verify the Created Objects and Membership
+
+```powershell
+Get-ADOrganizationalUnit -Identity $OuPath
+
+Get-ADUser `
+    -Identity "Karu.Jaru" `
+    -Properties Enabled, PasswordLastSet, MemberOf |
+    Select-Object Name, SamAccountName, Enabled, PasswordLastSet, MemberOf
+
+Get-ADGroupMember -Identity "E_Marketing"
+```
+
+## Validation
+
+I validated the implementation by confirming that:
+
+- The Toronto and Edmonton organizational units were created in the intended domain path.
+- Global security groups appeared inside the correct OU.
+- Domain user accounts were enabled and available in ADUC.
+- Users appeared in the expected groups.
+- Multiple memberships appeared in the user's **Member Of** tab.
+- A new user could authenticate from a domain-joined Windows 11 workstation.
+- Windows enforced the required password change at first sign-in.
+- The updated password was accepted and the user completed the sign-in process.
+
+## Troubleshooting Reference
+
+| Symptom | Likely cause | Verification or resolution |
+| --- | --- | --- |
+| PowerShell cannot find an OU | The distinguished name or domain path is incorrect | Run `Get-ADOrganizationalUnit -Filter * | Select-Object Name, DistinguishedName` and copy the correct path |
+| A user cannot sign in | The account is disabled, locked, expired, or the wrong sign-in format is being used | Check the account in ADUC or with `Get-ADUser`, then try `DOMAIN\username` or the user's UPN |
+| A group membership does not appear in the user's session | The user's existing access token has not refreshed | Sign out and back in, then run `whoami /groups` on the client |
+| A new password is rejected | The password does not meet the domain password policy | Review complexity, length, history, and minimum-age requirements |
+| `New-ADUser` fails | A required parameter is missing or the username already exists | Review the error, confirm the OU path, and check with `Get-ADUser -Filter 'SamAccountName -eq "Karu.Jaru"'` |
+
+## Security and Administration Practices
+
+- Never publish passwords in scripts, screenshots, CSV files, or repository documentation.
+- Use secure prompts, an approved secrets-management process, or automatically generated temporary credentials.
+- Require users to change temporary passwords at first sign-in.
+- Assign resource access to security groups instead of directly to individual accounts.
+- Follow least privilege when delegating user and group administration.
+- Use clear naming standards so accounts and groups remain easy to identify and audit.
+- Disable or remove inactive accounts according to the organization's access-review process.
+
+## Key Takeaways
+
+This project demonstrated how a well-organized directory makes user administration easier to scale and troubleshoot. Organizational units provide structure, while security groups allow administrators to manage access through membership instead of repeatedly assigning permissions to individual users.
+
+It also showed the value of combining ADUC with PowerShell: the GUI is useful for individual support tasks and visual verification, while PowerShell improves consistency and efficiency when the same task must be repeated.
+
+<details>
+<summary><strong>View the Complete ADUC Walkthrough</strong></summary>
+
+### Create an Organizational Unit
+
+1. In **Server Manager**, open **Tools > Active Directory Users and Computers**.
+
+   <p align="center"><img src="https://i.imgur.com/Jk0i5NN.png" width="750" alt="Opening Active Directory Users and Computers from Server Manager"></p>
+
+2. Right-click the domain, select **New**, and then select **Organizational Unit**.
+
+   <p align="center"><img src="https://i.imgur.com/tLc36FQ.png" width="750" alt="Opening the new organizational unit dialog"></p>
+
+3. Enter the OU name and create the object.
+
+   <p align="center"><img src="https://i.imgur.com/SJSrsWn.png" width="750" alt="Naming a new organizational unit"></p>
+
+### Create Global Security Groups
+
+1. Right-click the appropriate OU and select **New > Group**.
+
+   <p align="center"><img src="https://i.imgur.com/zeK3BgN.png" width="750" alt="Creating a group in an organizational unit"></p>
+
+2. Enter the group name and configure it as a global security group.
+
+   <p align="center"><img src="https://i.imgur.com/TZ8uRiB.png" width="750" alt="Configuring a new global security group"></p>
+
+3. Repeat the process for the additional department or access groups.
+
+   <p align="center"><img src="https://i.imgur.com/4s8QNOI.png" width="750" alt="Security groups created in the organizational unit"></p>
+
+### Create Domain Users
+
+1. Right-click the appropriate OU and select **New > User**.
+
+   <p align="center"><img src="https://i.imgur.com/1gUs4oc.png" width="750" alt="Creating a user in an organizational unit"></p>
+
+2. Enter the employee's name and user logon name.
+
+   <p align="center"><img src="https://i.imgur.com/ZNxSdwF.png" width="750" alt="Entering a new domain user's identity information"></p>
+
+3. Assign a temporary password and keep **User must change password at next logon** selected.
+
+   <p align="center"><img src="https://i.imgur.com/qgddFlJ.png" width="750" alt="Configuring a temporary password for a new domain user"></p>
+
+4. Review the account information and create the user.
+
+   <p align="center"><img src="https://i.imgur.com/MJGZOPD.png" width="750" alt="Reviewing the new Active Directory user account"></p>
+
+5. Repeat the process for the additional lab users.
+
+   <p align="center"><img src="https://i.imgur.com/HppqZGM.png" width="750" alt="Multiple users created in an organizational unit"></p>
+
+### Add Users to Security Groups
+
+1. Right-click a user and select **Add to a group**.
+
+   <p align="center"><img src="https://i.imgur.com/zNL84DP.png" width="750" alt="Adding an Active Directory user to a group"></p>
+
+2. Enter the group name, select **Check Names**, and confirm the selection.
+
+   <p align="center"><img src="https://i.imgur.com/owc3DUR.png" width="750" alt="Selecting a security group for the user"></p>
+
+3. Confirm that Active Directory completed the membership change.
+
+   <p align="center"><img src="https://i.imgur.com/6N1yAys.png" width="750" alt="Successful Active Directory group membership operation"></p>
+
+### Add Members from the Group Object
+
+1. Open a group and select its **Members** tab.
+
+   <p align="center"><img src="https://i.imgur.com/2O2Gamm.png" width="750" alt="Opening the Members tab of a security group"></p>
+
+2. Select **Add**.
+
+   <p align="center"><img src="https://i.imgur.com/1veIP9e.png" width="750" alt="Adding a member from the group properties"></p>
+
+3. Enter the user's name, select **Check Names**, and confirm the account.
+
+   <p align="center"><img src="https://i.imgur.com/wBi0wPG.png" width="750" alt="Selecting a user to add to the security group"></p>
+
+4. Confirm that the user now appears in the group's membership list.
+
+   <p align="center"><img src="https://i.imgur.com/QXSpavs.png" width="750" alt="Verifying the user in the security group's membership list"></p>
+
+### Add a User to Multiple Groups
+
+1. Right-click the user and select **Add to a group**.
+
+   <p align="center"><img src="https://i.imgur.com/vAQIvXP.png" width="750" alt="Opening the group assignment action for a user"></p>
+
+2. Enter multiple group names separated by semicolons, select **Check Names**, and confirm the selection.
+
+   <p align="center"><img src="https://i.imgur.com/KbMXyU0.png" width="750" alt="Assigning an Active Directory user to multiple groups"></p>
+
+3. Confirm that Active Directory completed the operation.
+
+   <p align="center"><img src="https://i.imgur.com/Y5VEIKP.png" width="750" alt="Successful multiple group assignment"></p>
+
+4. Open the user's properties and verify the memberships from the **Member Of** tab.
+
+   <p align="center"><img src="https://i.imgur.com/TQIaMx1.png" width="750" alt="Reviewing all groups assigned to a user"></p>
+
+### Validate the New User's Domain Sign-In
+
+1. On the Windows 11 client, sign out and enter the new domain user's credentials.
+
+   <p align="center"><img src="https://i.imgur.com/WD4PM0O.png" width="750" alt="Signing in to Windows with the new domain account"></p>
+
+2. Windows prompts the user to change the temporary password.
+
+   <p align="center"><img src="https://i.imgur.com/LWzNMX6.png" width="750" alt="First-sign-in password change prompt"></p>
+
+3. Enter and confirm a new password that meets the domain policy.
+
+   <p align="center"><img src="https://i.imgur.com/Ag0Vbw1.png" width="750" alt="Changing the temporary domain password"></p>
+
+4. Confirm the successful password change and complete the sign-in.
+
+   <p align="center"><img src="https://i.imgur.com/lnr6Rtm.png" width="750" alt="Successful domain password change"></p>
+
+</details>
+
+<details>
+<summary><strong>View the PowerShell Administration Evidence</strong></summary>
+
+### Create an OU with PowerShell
+
+The OU was created with `New-ADOrganizationalUnit` and verified in the directory.
+
+<p align="center"><img src="https://i.imgur.com/y0bS0Zg.png" width="750" alt="Creating an organizational unit with PowerShell"></p>
+
+### Create a Security Group with PowerShell
+
+The department security group was created in the Edmonton OU with `New-ADGroup`.
+
+<p align="center"><img src="https://i.imgur.com/DHDu1wj.png" width="750" alt="Creating an Active Directory security group with PowerShell"></p>
+
+### Assign the User to the Group with PowerShell
+
+The user was added to the security group with `Add-ADGroupMember`.
+
+<p align="center"><img src="https://i.imgur.com/IMWxDjp.png" width="750" alt="Adding a user to an Active Directory group with PowerShell"></p>
+
+### Verify the Group Membership
+
+The user's membership was confirmed from the group's **Members** tab in ADUC.
+
+<p align="center"><img src="https://i.imgur.com/VbIa3x4.png" width="750" alt="Verifying the PowerShell-created Active Directory group membership"></p>
+
+> The original user-creation screenshot is intentionally omitted because it displayed a hard-coded temporary password. The secure command in this README uses `Read-Host -AsSecureString` instead.
+
+</details>
+
+## Related Projects
+
+- [Active Directory Domain Services Deployment and Windows Client Integration](https://github.com/AdeniyiAdesakin/Install-Active-Directory-Domain-Services-and-Join-Client-s-Computer-to-Active-Directory)
+- [Group Policy Object Implementations](https://github.com/AdeniyiAdesakin/Group-Policy-Object-GPO-implementations)
+- [Bulk Active Directory User Provisioning with PowerShell](https://github.com/AdeniyiAdesakin/Import-bulk-Users-from-a-CSV-Spreadsheet-with-PowerShell-)
+- 
+
+
+
