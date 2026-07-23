@@ -108,73 +108,6 @@ From a domain-joined Windows 11 workstation, I signed in with a newly created do
 
 I used the ActiveDirectory PowerShell module to create an OU, create a global security group, provision a user, and assign the user to the appropriate group. PowerShell makes repetitive administration more consistent and prepares the process for future bulk provisioning.
 
-## Secure PowerShell Examples
-
-The following commands show a corrected and more secure version of the workflow. The temporary password is entered as a `SecureString` instead of being written directly into the script or repository.
-
-### Create an Organizational Unit
-
-```powershell
-Import-Module ActiveDirectory
-
-$DomainPath = "DC=Adeniyi,DC=com"
-$OuPath = "OU=Edmonton,$DomainPath"
-
-New-ADOrganizationalUnit `
-    -Name "Edmonton" `
-    -Path $DomainPath `
-    -ProtectedFromAccidentalDeletion $true
-```
-
-### Create a Global Security Group
-
-```powershell
-New-ADGroup `
-    -Name "E_Marketing" `
-    -SamAccountName "E_Marketing" `
-    -GroupScope Global `
-    -GroupCategory Security `
-    -Path $OuPath `
-    -Description "Edmonton Marketing users"
-```
-
-### Create and Enable a Domain User
-
-```powershell
-$Password = Read-Host "Enter a temporary password" -AsSecureString
-
-New-ADUser `
-    -Name "Karu Jaru" `
-    -GivenName "Karu" `
-    -Surname "Jaru" `
-    -SamAccountName "Karu.Jaru" `
-    -UserPrincipalName "Karu.Jaru@adeniyi.com" `
-    -AccountPassword $Password `
-    -Path $OuPath `
-    -Enabled $true `
-    -ChangePasswordAtLogon $true
-```
-
-### Add the User to a Security Group
-
-```powershell
-Add-ADGroupMember `
-    -Identity "E_Marketing" `
-    -Members "Karu.Jaru"
-```
-
-### Verify the Created Objects and Membership
-
-```powershell
-Get-ADOrganizationalUnit -Identity $OuPath
-
-Get-ADUser `
-    -Identity "Karu.Jaru" `
-    -Properties Enabled, PasswordLastSet, MemberOf |
-    Select-Object Name, SamAccountName, Enabled, PasswordLastSet, MemberOf
-
-Get-ADGroupMember -Identity "E_Marketing"
-```
 
 ## Validation
 
@@ -373,7 +306,6 @@ The user's membership was confirmed from the group's **Members** tab in ADUC.
 - [Active Directory Domain Services Deployment and Windows Client Integration](https://github.com/AdeniyiAdesakin/Install-Active-Directory-Domain-Services-and-Join-Client-s-Computer-to-Active-Directory)
 - [Group Policy Object Implementations](https://github.com/AdeniyiAdesakin/Group-Policy-Object-GPO-implementations)
 - [Bulk Active Directory User Provisioning with PowerShell](https://github.com/AdeniyiAdesakin/Import-bulk-Users-from-a-CSV-Spreadsheet-with-PowerShell-)
-- 
 
 
 
