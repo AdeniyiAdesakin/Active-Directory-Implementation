@@ -264,7 +264,7 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
    <p align="center"><img src="https://i.imgur.com/2YskZaJ.png" width="750" alt="Reviewing the new Active Directory user account"></p>
 
-5. Repeat the process for the additional lab users.
+5. Repeat the process for the additional AD users.
 
    <p align="center"><img src="https://i.imgur.com/iMYNWmc.png" width="750" alt="Multiple users created in an organizational unit"></p>
 
@@ -312,7 +312,7 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 3. Confirm that Active Directory completed the operation.
 
-   <p align="center"><img src="https://i.imgur.com/Y5VEIKP.png" width="750" alt="Successful multiple group assignment"></p>
+   <p align="center"><img src="https://i.imgur.com/SgpnGZp.png" width="750" alt="Successful multiple group assignment"></p>
 
 4. Open the user's properties and verify the memberships from the **Member Of** tab.
 
@@ -322,7 +322,7 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 1. On the Windows 11 client, sign out and enter the new domain user's credentials.
 
-   <p align="center"><img src="https://i.imgur.com/WD4PM0O.png" width="750" alt="Signing in to Windows with the new domain account"></p>
+   <p align="center"><img src="https://i.imgur.com/avKNWzq.png" width="750" alt="Signing in to Windows with the new domain account"></p>
 
 2. Windows prompts the user to change the temporary password.
 
@@ -330,7 +330,7 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 3. Enter and confirm a new password that meets the domain policy.
 
-   <p align="center"><img src="https://i.imgur.com/Ag0Vbw1.png" width="750" alt="Changing the temporary domain password"></p>
+   <p align="center"><img src="https://i.imgur.com/6Ijzeqk.png" width="750" alt="Changing the temporary domain password"></p>
 
 4. Confirm the successful password change and complete the sign-in.
 
@@ -345,25 +345,25 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 The OU was created with `New-ADOrganizationalUnit` and verified in the directory.
 
-<p align="center"><img src="https://i.imgur.com/y0bS0Zg.png" width="750" alt="Creating an organizational unit with PowerShell"></p>
+<p align="center"><img src="https://i.imgur.com/LImtzoy.png" width="750" alt="Creating an organizational unit with PowerShell"></p>
 
 ### Create a Security Group with PowerShell
 
 The department security group was created in the Edmonton OU with `New-ADGroup`.
 
-<p align="center"><img src="https://i.imgur.com/DHDu1wj.png" width="750" alt="Creating an Active Directory security group with PowerShell"></p>
+<p align="center"><img src="https://i.imgur.com/cKTg1n6.png" width="750" alt="Creating an Active Directory security group with PowerShell"></p>
 
 ### Assign the User to the Group with PowerShell
 
 The user was added to the security group with `Add-ADGroupMember`.
 
-<p align="center"><img src="https://i.imgur.com/IMWxDjp.png" width="750" alt="Adding a user to an Active Directory group with PowerShell"></p>
+<p align="center"><img src="https://i.imgur.com/iPVFSRf.png" width="750" alt="Adding a user to an Active Directory group with PowerShell"></p>
 
 ### Verify the Group Membership
 
 The user's membership was confirmed from the group's **Members** tab in ADUC.
 
-<p align="center"><img src="https://i.imgur.com/VbIa3x4.png" width="750" alt="Verifying the PowerShell-created Active Directory group membership"></p>
+<p align="center"><img src="https://i.imgur.com/rfrqRp7.png" width="750" alt="Verifying the PowerShell-created Active Directory group membership"></p>
 
 > The original user-creation screenshot is intentionally omitted because it displayed a hard-coded temporary password. The secure command in this README uses `Read-Host -AsSecureString` instead.
 
