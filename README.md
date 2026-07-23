@@ -272,11 +272,11 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 1. Right-click a user and select **Add to a group**.
 
-   <p align="center"><img src="https://i.imgur.com/zNL84DP.png" width="750" alt="Adding an Active Directory user to a group"></p>
+   <p align="center"><img src="https://i.imgur.com/GOrq054.png" width="750" alt="Adding an Active Directory user to a group"></p>
 
 2. Enter the group name, select **Check Names**, and confirm the selection.
 
-   <p align="center"><img src="https://i.imgur.com/owc3DUR.png" width="750" alt="Selecting a security group for the user"></p>
+   <p align="center"><img src="https://i.imgur.com/aaFNpRS.png" width="750" alt="Selecting a security group for the user"></p>
 
 3. Confirm that Active Directory completed the membership change.
 
