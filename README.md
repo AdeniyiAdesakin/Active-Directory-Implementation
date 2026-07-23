@@ -316,7 +316,7 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 4. Open the user's properties and verify the memberships from the **Member Of** tab.
 
-   <p align="center"><img src="https://i.imgur.com/TQIaMx1.png" width="750" alt="Reviewing all groups assigned to a user"></p>
+   <p align="center"><img src="https://i.imgur.com/JWENbXd.png" width="750" alt="Reviewing all groups assigned to a user"></p>
 
 ### Validate the New User's Domain Sign-In
 
@@ -334,7 +334,7 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 4. Confirm the successful password change and complete the sign-in.
 
-   <p align="center"><img src="https://i.imgur.com/VbePA7N.png" width="750" alt="Successful domain password change"></p>
+   <p align="center"><img src="https://i.imgur.com/SH2hliA.png" width="750" alt="Successful domain password change"></p>
 
 </details>
 
