@@ -244,25 +244,25 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 3. Repeat the process for the additional department or access groups.
 
-   <p align="center"><img src="https://i.imgur.com/4s8QNOI.png" width="750" alt="Security groups created in the organizational unit"></p>
+   <p align="center"><img src="https://i.imgur.com/GhgybJp.png" width="750" alt="Security groups created in the organizational unit"></p>
 
 ### Create Domain Users
 
 1. Right-click the appropriate OU and select **New > User**.
 
-   <p align="center"><img src="https://i.imgur.com/1gUs4oc.png" width="750" alt="Creating a user in an organizational unit"></p>
+   <p align="center"><img src="https://i.imgur.com/ENncCqx.png" width="750" alt="Creating a user in an organizational unit"></p>
 
 2. Enter the employee's name and user logon name.
 
-   <p align="center"><img src="https://i.imgur.com/ZNxSdwF.png" width="750" alt="Entering a new domain user's identity information"></p>
+   <p align="center"><img src="https://imgur.com/a/sOQwcBj" width="750" alt="Entering a new domain user's identity information"></p>
 
 3. Assign a temporary password and keep **User must change password at next logon** selected.
 
-   <p align="center"><img src="https://i.imgur.com/qgddFlJ.png" width="750" alt="Configuring a temporary password for a new domain user"></p>
+   <p align="center"><img src="https://i.imgur.com/RTx3xST.png" width="750" alt="Configuring a temporary password for a new domain user"></p>
 
 4. Review the account information and create the user.
 
-   <p align="center"><img src="https://i.imgur.com/MJGZOPD.png" width="750" alt="Reviewing the new Active Directory user account"></p>
+   <p align="center"><img src="https://i.imgur.com/2YskZaJ.png" width="750" alt="Reviewing the new Active Directory user account"></p>
 
 5. Repeat the process for the additional lab users.
 
