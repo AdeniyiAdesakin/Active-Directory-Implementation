@@ -109,6 +109,7 @@ From a domain-joined Windows 11 workstation, I signed in with a newly created do
 I used the ActiveDirectory PowerShell module to create an OU, create a global security group, provision a user, and assign the user to the appropriate group. PowerShell makes repetitive administration more consistent and prepares the process for future bulk provisioning.
 
 
+
 ## Validation
 
 I validated the implementation by confirming that:
