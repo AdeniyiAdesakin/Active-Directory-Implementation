@@ -326,7 +326,7 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 2. Windows prompts the user to change the temporary password.
 
-   <p align="center"><img src="https://i.imgur.com/uhMoVpp.png" width="750" alt="First-sign-in password change prompt"></p>
+   <p align="center"><img src="https://i.imgur.com/lM8RkiY.png" width="750" alt="First-sign-in password change prompt"></p>
 
 3. Enter and confirm a new password that meets the domain policy.
 
@@ -365,7 +365,6 @@ The user's membership was confirmed from the group's **Members** tab in ADUC.
 
 <p align="center"><img src="https://i.imgur.com/rfrqRp7.png" width="750" alt="Verifying the PowerShell-created Active Directory group membership"></p>
 
-> The original user-creation screenshot is intentionally omitted because it displayed a hard-coded temporary password. The secure command in this README uses `Read-Host -AsSecureString` instead.
 
 </details>
 
