@@ -280,35 +280,35 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 3. Confirm that Active Directory completed the membership change.
 
-   <p align="center"><img src="https://i.imgur.com/6N1yAys.png" width="750" alt="Successful Active Directory group membership operation"></p>
+   <p align="center"><img src="https://i.imgur.com/Y8AJdcr.png" width="750" alt="Successful Active Directory group membership operation"></p>
 
 ### Add Members from the Group Object
 
 1. Open a group and select its **Members** tab.
 
-   <p align="center"><img src="https://i.imgur.com/2O2Gamm.png" width="750" alt="Opening the Members tab of a security group"></p>
+   <p align="center"><img src="https://i.imgur.com/TknOtne.png" width="750" alt="Opening the Members tab of a security group"></p>
 
 2. Select **Add**.
 
-   <p align="center"><img src="https://i.imgur.com/1veIP9e.png" width="750" alt="Adding a member from the group properties"></p>
+   <p align="center"><img src="https://i.imgur.com/9RepiM4.png" width="750" alt="Adding a member from the group properties"></p>
 
 3. Enter the user's name, select **Check Names**, and confirm the account.
 
-   <p align="center"><img src="https://i.imgur.com/wBi0wPG.png" width="750" alt="Selecting a user to add to the security group"></p>
+   <p align="center"><img src="https://i.imgur.com/9RepiM4.png" width="750" alt="Selecting a user to add to the security group"></p>
 
 4. Confirm that the user now appears in the group's membership list.
 
-   <p align="center"><img src="https://i.imgur.com/QXSpavs.png" width="750" alt="Verifying the user in the security group's membership list"></p>
+   <p align="center"><img src="https://i.imgur.com/RrVdCws.png" width="750" alt="Verifying the user in the security group's membership list"></p>
 
 ### Add a User to Multiple Groups
 
 1. Right-click the user and select **Add to a group**.
 
-   <p align="center"><img src="https://i.imgur.com/vAQIvXP.png" width="750" alt="Opening the group assignment action for a user"></p>
+   <p align="center"><img src="https://i.imgur.com/EZgdSmm.png" width="750" alt="Opening the group assignment action for a user"></p>
 
 2. Enter multiple group names separated by semicolons, select **Check Names**, and confirm the selection.
 
-   <p align="center"><img src="https://i.imgur.com/KbMXyU0.png" width="750" alt="Assigning an Active Directory user to multiple groups"></p>
+   <p align="center"><img src="https://i.imgur.com/O44uhmE.png" width="750" alt="Assigning an Active Directory user to multiple groups"></p>
 
 3. Confirm that Active Directory completed the operation.
 
