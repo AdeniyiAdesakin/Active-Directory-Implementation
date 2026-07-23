@@ -326,7 +326,7 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 2. Windows prompts the user to change the temporary password.
 
-   <p align="center"><img src="https://i.imgur.com/LWzNMX6.png" width="750" alt="First-sign-in password change prompt"></p>
+   <p align="center"><img src="https://i.imgur.com/uhMoVpp.png" width="750" alt="First-sign-in password change prompt"></p>
 
 3. Enter and confirm a new password that meets the domain policy.
 
@@ -334,7 +334,7 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 4. Confirm the successful password change and complete the sign-in.
 
-   <p align="center"><img src="https://i.imgur.com/lnr6Rtm.png" width="750" alt="Successful domain password change"></p>
+   <p align="center"><img src="https://i.imgur.com/VbePA7N.png" width="750" alt="Successful domain password change"></p>
 
 </details>
 
