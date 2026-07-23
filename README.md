@@ -254,7 +254,7 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 2. Enter the employee's name and user logon name.
 
-   <p align="center"><img src="https://imgur.com/a/sOQwcBj" width="750" alt="Entering a new domain user's identity information"></p>
+   <p align="center"><img src="https://i.imgur.com/xfB3MWb.png" width="750" alt="Entering a new domain user's identity information"></p>
 
 3. Assign a temporary password and keep **User must change password at next logon** selected.
 
@@ -266,7 +266,7 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 5. Repeat the process for the additional lab users.
 
-   <p align="center"><img src="https://i.imgur.com/HppqZGM.png" width="750" alt="Multiple users created in an organizational unit"></p>
+   <p align="center"><img src="https://i.imgur.com/iMYNWmc.png" width="750" alt="Multiple users created in an organizational unit"></p>
 
 ### Add Users to Security Groups
 
