@@ -222,25 +222,25 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 1. In **Server Manager**, open **Tools > Active Directory Users and Computers**.
 
-   <p align="center"><img src="https://i.imgur.com/Jk0i5NN.png" width="750" alt="Opening Active Directory Users and Computers from Server Manager"></p>
+   <p align="center"><img src="https://i.imgur.com/UABQkcS.png" width="750" alt="Opening Active Directory Users and Computers from Server Manager"></p>
 
 2. Right-click the domain, select **New**, and then select **Organizational Unit**.
 
-   <p align="center"><img src="https://i.imgur.com/tLc36FQ.png" width="750" alt="Opening the new organizational unit dialog"></p>
+   <p align="center"><img src="https://i.imgur.com/rOdUPzj.png" width="750" alt="Opening the new organizational unit dialog"></p>
 
 3. Enter the OU name and create the object.
 
-   <p align="center"><img src="https://i.imgur.com/SJSrsWn.png" width="750" alt="Naming a new organizational unit"></p>
+   <p align="center"><img src="https://i.imgur.com/eQIoRdd.png" width="750" alt="Naming a new organizational unit"></p>
 
 ### Create Global Security Groups
 
 1. Right-click the appropriate OU and select **New > Group**.
 
-   <p align="center"><img src="https://i.imgur.com/zeK3BgN.png" width="750" alt="Creating a group in an organizational unit"></p>
+   <p align="center"><img src="https://i.imgur.com/uoPJbQw.png" width="750" alt="Creating a group in an organizational unit"></p>
 
 2. Enter the group name and configure it as a global security group.
 
-   <p align="center"><img src="https://i.imgur.com/TZ8uRiB.png" width="750" alt="Configuring a new global security group"></p>
+   <p align="center"><img src="https://i.imgur.com/HPJ63kQ.png" width="750" alt="Configuring a new global security group"></p>
 
 3. Repeat the process for the additional department or access groups.
 
