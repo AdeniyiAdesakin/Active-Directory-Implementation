@@ -294,7 +294,7 @@ It also showed the value of combining ADUC with PowerShell: the GUI is useful fo
 
 3. Enter the user's name, select **Check Names**, and confirm the account.
 
-   <p align="center"><img src="https://i.imgur.com/9RepiM4.png" width="750" alt="Selecting a user to add to the security group"></p>
+   <p align="center"><img src="https://i.imgur.com/kezgZZn.png" width="750" alt="Selecting a user to add to the security group"></p>
 
 4. Confirm that the user now appears in the group's membership list.
 
