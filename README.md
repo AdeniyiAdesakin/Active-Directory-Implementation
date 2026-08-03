@@ -8,7 +8,7 @@ I built and administered an Active Directory identity structure representing use
 
 This project demonstrates the identity-administration tasks commonly performed by help desk, service desk, and junior systems administration teams.
 
-## Simulated Business Scenario
+## Business Scenario
 
 A growing organization needs a structured way to manage employee accounts across multiple locations. Creating every account in the default Active Directory containers would make administration, policy targeting, and access management difficult as the organization grows.
 
