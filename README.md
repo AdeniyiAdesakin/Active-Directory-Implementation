@@ -53,7 +53,6 @@ To address this, I organized directory objects by location, grouped users accord
 - Password-change-at-first-sign-in configuration
 - Windows domain authentication
 - PowerShell administration with the ActiveDirectory module
-- Secure handling of temporary passwords
 - Technical documentation
 
 ## Implementation Summary
