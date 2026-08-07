@@ -23,7 +23,6 @@ To address this, I organized directory objects by location, grouped users accord
 - Add users to one or multiple security groups.
 - Verify group memberships in Active Directory.
 - Validate a new user's domain sign-in from a Windows 11 (client) computer.
-- Repeat common administration tasks with PowerShell.
 
 ## Lab Environment
 
