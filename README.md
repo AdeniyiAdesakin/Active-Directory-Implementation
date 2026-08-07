@@ -130,10 +130,8 @@ I validated the implementation by confirming that:
 | A new password is rejected | The password does not meet the domain password policy | Review complexity, length, history, and minimum-age requirements |
 | `New-ADUser` fails | A required parameter is missing or the username already exists | Review the error, confirm the OU path, and check with `Get-ADUser -Filter 'SamAccountName -eq "Karu.Jaru"'` |
 
-## Security and Administration Practices
+## Recommended Security and Administration Practices
 
-- Never publish passwords in scripts, screenshots, CSV files, or repository documentation.
-- Use secure prompts, an approved secrets-management process, or automatically generated temporary credentials.
 - Require users to change temporary passwords at first sign-in.
 - Assign resource access to security groups instead of directly to individual accounts.
 - Follow least privilege when delegating user and group administration.
