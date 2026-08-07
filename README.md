@@ -41,7 +41,6 @@ To address this, I organized directory objects by location, grouped users accord
 | Global security group | `E_Marketing` | Groups users with a shared department or access requirement |
 | Domain user | Example employee account | Provides an individual identity for domain authentication |
 
-> **Project scope:** This lab demonstrates identity organization and group membership. Assigning the groups to file, printer, or application permissions is covered separately in resource-access projects.
 
 ## Skills Demonstrated
 
