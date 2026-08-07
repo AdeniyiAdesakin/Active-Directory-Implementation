@@ -31,7 +31,7 @@ To address this, I organized directory objects by location, grouped users accord
 | Domain controller | Windows Server 2019 | Hosts Active Directory Domain Services |
 | Client workstation | Windows 11 Pro | Validates domain authentication and the first-sign-in process |
 | GUI administration | Active Directory Users and Computers | Manages OUs, users, groups, and memberships |
-| Automation | Windows PowerShell and the ActiveDirectory module | Creates and verifies directory objects through commands |
+| Automation | Windows PowerShell | Creates and verifies directory objects through commands |
 
 ## Directory Design
 
