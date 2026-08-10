@@ -138,7 +138,7 @@ I validated the implementation by confirming that:
 - Use clear naming standards so accounts and groups remain easy to identify and audit.
 - Disable or remove inactive accounts according to the organization's access-review process.
 
-## Key Takeaways
+## Project Outcome
 
 This project demonstrated how a well-organized directory makes user administration easier to scale and troubleshoot. Organizational units provide structure, while security groups allow administrators to manage access through membership instead of repeatedly assigning permissions to individual users.
 
